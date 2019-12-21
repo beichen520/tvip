@@ -62,21 +62,21 @@ void sendVIPMenu(ServerPlayer* sp) {
     string name=sp->getName();
         auto lis=new list<pair<string,std::function<void()> > >();
         lis->emplace_back(
-            "Adjust time to night",[name]{
+            "§a更换时间夜晚",[name]{
                 auto x=getSrvLevel()->getPlayer(name);
                 if(x)
                     runcmdAs("vip time night",x);
             }
         );
         lis->emplace_back(
-            "Adjust time to morning",[name]{
+            "§a更换时间白天",[name]{
                 auto x=getSrvLevel()->getPlayer(name);
                 if(x)
                     runcmdAs("vip time day",x);
             }
         );
         lis->emplace_back(
-            "Teleport to target player",[name]{
+            "§c传送到某个玩家",[name]{
                 auto x=getSrvLevel()->getPlayer(name);
                 if(x)
                 sendTPChoose((ServerPlayer*)x);
